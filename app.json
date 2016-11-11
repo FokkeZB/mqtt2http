@@ -1,6 +1,6 @@
 {
   "name": "mqtt2http",
-  "description": "MQTT messages to HTTP requests",
+  "description": "Forward MQTT messages as HTTP requests",
   "repository": "https://github.com/fokkezb/mqtt2http",
   "logo": "https://github.com/fokkezb/mqtt2http/raw/master/logo.png",
   "keywords": [
@@ -47,6 +47,7 @@
     },
     "DEBUG_LOG": {
       "description": "Set to a truthy string (e.g. `1`) to write debug logs to the console.",
+      "value": "1",
       "required": false
     },
     "DEBUG_PUBLISH": {
