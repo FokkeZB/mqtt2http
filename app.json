@@ -1,0 +1,66 @@
+{
+  "name": "mqtt2http",
+  "description": "MQTT messages to HTTP requests",
+  "repository": "https://github.com/fokkezb/mqtt2http",
+  "logo": "https://github.com/fokkezb/mqtt2http/raw/master/logo.svg",
+  "keywords": [
+    "node",
+    "mqtt",
+    "webhook"
+  ],
+  "image": "heroku/nodejs",
+  "env": {
+    "MQTT_URL": {
+      "description": "MQTT broker URL to connect to. See https://www.npmjs.com/package/mqtt#connect",
+      "value": "mqtt://test.mosquitto.org"
+    },
+    "MQTT_USERNAME": {
+      "description": "MQTT broker username. See https://www.npmjs.com/package/mqtt#mqttclientstreambuilder-options",
+      "required": false
+    },
+    "MQTT_PASSWORD": {
+      "description": "MQTT broker password. See https://www.npmjs.com/package/mqtt#mqttclientstreambuilder-options",
+      "required": false
+    },
+    "MQTT_CONNECT": {
+      "description": "MQTT broker connection options. Formatted as JSON String. See https://www.npmjs.com/package/mqtt#mqttclientstreambuilder-options",
+      "required": false
+    },
+    "MQTT_TOPIC": {
+      "description": "MQTT topic(s) to subscribe. Either a single topic or an Array or Object formatted as JSON String. See https://www.npmjs.com/package/mqtt#subscribe"
+    },
+    "MQTT_SUBSCRIBE": {
+      "description": "MQTT subscribe options. Formatted as JSON String. See https://www.npmjs.com/package/mqtt#subscribe",
+      "required": false
+    },
+    "HTTP_URL": {
+      "description": "HTTP request URL. Compiled as Handlebars template and executed with the `topic` and `message` as data. See https://www.npmjs.com/package/request#requestoptions-callback and http://handlebarsjs.com/",
+      "value": "https://your.callback.for/{{ topic }}/{{ message.time }}"
+    },
+    "HTTP_JSON": {
+      "description": "Set to a truthy string (e.g. `1`) to set the request option `json` to `true` and `body` to an object with the `topic` and `message` (as object, if available). See https://www.npmjs.com/package/request#requestoptions-callback",
+      "required": false
+    },
+    "HTTP_REQUEST": {
+      "description": "HTTP request options. Compiled as Handlebars template and executed with the `topic` and `message` as data. Use the `stringify` helper if needed to output a JSON String. See https://www.npmjs.com/package/request#requestoptions-callback",
+      "required": false
+    },
+    "DEBUG_LOG": {
+      "description": "Set to a truthy string (e.g. `1`) to write debug logs to the console.",
+      "required": false
+    },
+    "DEBUG_PUBLISH": {
+      "description": "Set to a integer string (e.g. `5000`) to publish dummy topics to the broker at this interval.",
+      "required": false
+    },
+    "DEBUG_MESSAGE": {
+      "description": "Message to publish. Defaults to a JSON formatted object with `time` set to `Date.toString()`.",
+      "required": false
+    },
+    "DEBUG_NOOP": {
+      "description": "Set to a truthy string (e.g. `1`) to not actually make the HTTP request.",
+      "required": false
+    }
+  },
+  "website": "https://github.com/fokkezb/mqtt2http#README"
+}

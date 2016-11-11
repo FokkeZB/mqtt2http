@@ -1,0 +1,36 @@
+{
+  "name": "mqtt2http",
+  "version": "1.0.0",
+  "description": "Forward MQTT messages as HTTP requests",
+  "keywords": [
+    "node",
+    "mqtt",
+    "webhook"
+  ],
+  "homepage": "https://github.com/fokkezb/mqtt2http#README",
+  "repository": {
+    "url": "https://github.com/fokkezb/mqtt2http",
+    "type": "git"
+  },
+  "private": true,
+  "engines": {
+    "node": "6.9.1"
+  },
+  "main": "index.js",
+  "author": "Fokke Zandbergen",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "p2a": "node scripts/package2app.js",
+    "a2r": "node scripts/app2readme.js"
+  },
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "mqtt": "^2.0.1",
+    "request": "^2.78.0"
+  },
+  "devDependencies": {
+    "dotenv": "^2.0.0",
+    "markdown-table": "^1.0.0"
+  }
+}
