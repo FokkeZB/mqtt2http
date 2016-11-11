@@ -2,7 +2,7 @@
   "name": "mqtt2http",
   "description": "MQTT messages to HTTP requests",
   "repository": "https://github.com/fokkezb/mqtt2http",
-  "logo": "https://github.com/fokkezb/mqtt2http/raw/master/logo.svg",
+  "logo": "https://github.com/fokkezb/mqtt2http/raw/master/logo.png",
   "keywords": [
     "node",
     "mqtt",
