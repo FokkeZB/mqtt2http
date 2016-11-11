@@ -1,4 +1,6 @@
-require('dotenv').config();
+require('dotenv').config({
+  silent: true
+});
 
 const mqtt = require('mqtt');
 const request = require('request');
