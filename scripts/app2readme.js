@@ -21,7 +21,7 @@ fs.readFile(readme, 'utf8', (err, data) => {
   for (let key of Object.keys(app.env)) {
     env.push([
       '`' + key + '`',
-      app.env[key].required ? 'Yes' : 'No',
+      (app.env[key].required !== false) ? 'Yes' : 'No',
       app.env[key].description
     ]);
   }
